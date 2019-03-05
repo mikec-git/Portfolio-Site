@@ -1,0 +1,271 @@
+@import '../../../Styles/variables';
+
+.Project {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;  
+  transform: translateZ(0);
+  pointer-events: all;
+  
+  // 500px x 900px
+  @media only screen and (max-width: 31.25em) and (max-height: 56.25em) {
+    top: 2%;
+  }
+
+  // 450px x 750px
+  @media only screen and (max-width: 28.13em) and (max-height: 46.88em) {
+    top: 3%;
+  }
+  
+  // 400px x 600px
+  @media only screen and (max-width: 25em) and (max-height: 37.5em) {
+    top: 1.5%;
+  }
+  
+  // 350px x 600px
+  @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
+    top: 3%;
+  }
+  
+  &__Images {
+    backface-visibility: hidden;
+    transform-style: preserve-3d;  
+    position: absolute;
+    top: 50%;
+    left: 32%;    
+    transform: translateZ(0);
+    z-index: -15;
+    pointer-events: none;
+    
+    // 1280px x 550px
+    @media only screen and (max-width: 80em) and (max-height: 34.68em) {
+      max-width: 50%;
+      left: 27%;
+    }
+    
+    // 750px x 1000px
+    @media only screen and (max-width: 46.88em) and (max-height: 62.5em) {
+      left: 25%;
+      top: 50%;
+    }    
+
+    // 650px x 950px
+    @media only screen and (max-width: 40.63em) and (max-height: 59.38em) {
+      left: 50%;
+      top: 30%;
+    }    
+  }
+
+  &__Text {
+    width: 100%;
+    max-width: 60rem;
+    position: absolute;
+    top: 50%;
+    left: 48%; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    backface-visibility: hidden;    
+    transform: translate3d(0, -50%, 0);
+    
+    // 1450px
+    @media only screen and (max-width: 90.63em) {
+      max-width: 55rem;
+      left: 49%;
+    }
+
+    // 1280px x 550px
+    @media only screen and (max-width: 80em) and (max-height: 34.68em) {
+      max-width: 50%;
+      left: 42.5%;
+    }
+    
+    // 1150px
+    @media only screen and (max-width: 71.88em) {
+      max-width: 48rem;
+      left: 49%;
+    }
+
+    // 750px x 1000px
+    @media only screen and (max-width: 46.88em) and (max-height: 62.5em) {
+      left: 43%;
+    }    
+        
+    // 650px x 950px
+    @media only screen and (max-width: 40.63em) and (max-height: 59.38em) {
+      max-width: 90%;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+
+    // 350px x 600px
+    @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
+      max-width: 90%;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+  }
+  
+  &__Title {
+    position: relative;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: max-content;
+    height: 100%;
+    margin-bottom: 0;
+    transform: translateZ(0);
+    
+    // 350px x <600px
+    @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
+      margin-left: 0;
+    }
+  }
+
+  &__YearRole,
+  &__TitleSeparator {   
+    opacity: .7;
+  }
+
+  &__YearRole {
+    position: absolute;
+    backface-visibility: hidden;
+    top: 50%;
+    left: 100%;
+    transform: translate3d(0, -50%, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+
+  &__TitleSeparator {
+    display: block;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    height: $largest-font-size;
+    width: 4px;
+    border-radius: 100px;
+    margin-right: $larger-letter-spacing;
+    box-shadow: 0 0 2px #333;
+    
+    // 1450px
+    @media only screen and (max-width: 90.63em) {
+      height: $largest-font-size;
+    }
+    
+    // 450px
+    @media only screen and (max-width: 28.13em) {
+      margin-right: $large-letter-spacing;
+    }
+
+    // 400px x 800px
+    @media only screen and (max-width: 25em) and (max-height: 50em) {
+      height: 8rem;
+    }
+
+    // 400px x 600px
+    @media only screen and (max-width: 25em) and (max-height: 37.5em) {
+      height: $large-font-size;
+    }
+    
+    // 350px
+    @media only screen and (max-width: 21.88em) {
+      height: $medium-large-font-size;
+      width: 3px;
+    }
+  }
+
+  &__Tech {
+    display: flex;
+    width: 100%;
+    backface-visibility: hidden;
+    justify-content: flex-start;
+    transform: translateZ(0);
+
+    & > *:not(:last-child) {
+      margin-right: 4rem;
+      
+      // 1280px x 550px
+      @media only screen and (max-width: 80em) and (max-height: 34.68em) {
+        margin-right: 2rem;
+      }
+
+      // 1100px x 1400px
+      @media only screen and (max-width: 68.75em) and (max-height: 87.5em) {
+        margin-right: 2.5rem;
+      }
+      
+      // 1100px x 800px
+      @media only screen and (max-width: 68.75em) and (max-height: 50em) {
+        margin-right: 2.6rem;
+      }
+
+      // 800px x 1100px
+      @media only screen and (max-width: 50em) and (max-height: 68.75em) {
+        margin-right: 4.75rem;
+      }
+      
+      // 750px
+      @media only screen and (max-width: 46.88em) {
+        margin-right: 4rem;
+      }
+
+      // 600px
+      @media only screen and (max-width: 37.5em) {
+        margin-right: 3.5rem;
+      }
+      
+      // 550px
+      @media only screen and (max-width: 34.38em) {
+        margin-right: 2rem;
+      }
+      
+      // 450px x 850px
+      @media only screen and (max-width: 28.13em) and (max-height: 53.13em) {
+        margin-right: 4.5rem;
+      } 
+
+      // 450px x 750px
+      @media only screen and (max-width: 28.13em) and (max-height: 46.88em) {
+        margin-right: 4.75rem;
+      } 
+      
+      // 400px x 850px
+      @media only screen and (max-width: 25em) and (max-height: 53.13em) {
+        margin-right: 3rem;
+      }    
+      
+      // 375px x 700px
+      @media only screen and (max-width: 23.44em) and (max-height: 43.75em) {
+        margin-right: .1rem;
+      }
+            
+      // 350px x 600px
+      @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
+        margin-right: 0rem;
+      }
+    }
+  }
+
+  &__Buttons {
+    transform: translateZ(0.1rem);
+    backface-visibility: hidden;
+    display: flex;
+    z-index: 500;
+    width: 100%;
+    
+    & > *:first-child {
+      margin-right: 1rem;
+    }
+  }
+}

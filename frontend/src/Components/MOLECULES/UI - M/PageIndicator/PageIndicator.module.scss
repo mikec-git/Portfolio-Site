@@ -1,0 +1,108 @@
+@import '../../../../Styles/variables';
+
+.PageIndicator {
+  position: absolute;
+  left: 50%;
+  bottom: 3rem;
+  transform: translate(-50%, 0);
+  height: $handle-height;
+  z-index: 1000;
+
+  &__PageNumber {
+    display: none;
+  }
+
+  // 450px x 900px
+  @media only screen and (max-width: 28.13em) and (max-height: 56.25em) {
+    display: none;
+
+    // For mobile screens
+    &__PageNumber {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      bottom: 2%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      font-size: $small-font-size;
+      font-weight: bold;
+      width: 4rem;
+
+      &_left,
+      &_right {
+        position: absolute;
+        top: 50%;
+        display: block;
+        width: 4rem;
+        height: 4rem;
+        padding: 1.1rem;
+        filter: invert(1);
+      }
+
+      &_left {
+        right: 100%;
+        transform: translateY(-50%);
+      } 
+      
+      &_right {
+        left: 100%;
+        transform: rotateZ(180deg) translateY(50%);
+      }
+    }
+  }
+  
+  &__HandleProxy {
+    width: $handle-width;
+    height: $handle-height;
+    border-radius: 50%;
+    cursor: pointer;
+    
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0);
+    z-index: 100000;
+  }
+
+  &:hover &__Handle,
+  &:active &__Handle {
+    // Numerator
+    & > *:first-child {
+      left: 0;
+      bottom: 50%;
+      transform: translate(0, 50%);
+      font-size: $smaller-font-size;
+      font-weight: bold;
+    }
+
+    // Slash 
+    & > *:nth-of-type(3) {
+      transform: rotateZ(90deg) translate(-50%, -50%);
+      transform-origin: top;
+      top: calc(50% + 2.5px);
+      height: 1.5rem; 
+    }
+
+    // Left/Right Arrows
+    & > *:nth-of-type(2),
+    & > *:nth-of-type(5) {
+      opacity: 1; 
+    }
+
+    & > *:nth-of-type(2) {
+      left: -1.5rem;
+    }
+    
+    & > *:nth-of-type(5) {
+      right: -1.5rem;
+    }
+    
+    // Denominator
+    & > *:last-child {
+      right: -.25rem;
+      bottom: 50%;
+      transform: translate(0, 50%);
+    }
+  }
+}

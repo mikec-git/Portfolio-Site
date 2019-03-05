@@ -1,0 +1,224 @@
+@import '../../../../Styles/variables';
+
+.Skill {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 2.2rem;
+  width: 8rem;
+  height: 8rem;
+  backface-visibility: hidden;
+  margin: 0rem -.4rem;
+  transition: all 200ms ease-out;
+  
+  // 800px x 1050px
+  @media only screen and (max-width: 50em) and (max-height: 65.63em) {
+    padding: 1.7rem;
+    margin: .75rem -.3rem;
+  }
+  
+  // 450px x 850px
+  @media only screen and (max-width: 28.13em) and (max-height: 53.13em) {
+    width: 8rem;
+    height: 8rem;
+    margin: 0 -.5rem 3rem;
+    padding: 1.7rem;
+  }
+  
+  // 450px x 750px
+  @media only screen and (max-width: 28.13em) and (max-height: 46.88em) {
+    width: 7.5rem;
+    height: 7.5rem;
+    margin: 0 -.5rem 3rem;
+  } 
+  
+  // 400px x 850px
+  @media only screen and (max-width: 25em) and (max-height: 53.13em) {
+    width: 8rem;
+    height: 8rem;
+    padding: 1.9rem;
+    margin: .25rem -.3rem;
+  }  
+
+  // 400px x 700px
+  @media only screen and (max-width: 25em) and (max-height: 43.75em) {
+    width: 7rem;
+    height: 7rem;
+    padding: 1.3rem;
+    margin: .5rem -.3rem;
+  }
+
+  // 350px x 600px
+  @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
+    width: 5.5rem;
+    height: 5.5rem;
+    padding: 1.2rem;
+    margin: .4rem .3rem;
+  }
+    
+  &:hover {
+    box-shadow: 0 0 3rem rgba($red2, .3);
+  }
+  
+  &:hover &__NameWrapper {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    
+    // 1050px x 1400px
+    @media only screen and (max-width: 65.63em) and (max-height: 87.5em) {
+      transform: translate(-50%, -70%);
+    }
+
+    // 800px x 1050px
+    @media only screen and (max-width: 50em) and (max-height: 65.63em) {
+      transform: translate(-50%, -10%);
+    }
+
+    // 450px x 850px
+    @media only screen and (max-width: 28.13em) and (max-height: 53.13em) {
+      transform: translate(-50%, -20%);      
+    }
+    
+    // 450px x 750px
+    @media only screen and (max-width: 28.13em) and (max-height: 46.88em) {
+      transform: translate(-50%, -15%);
+    } 
+    
+    // 400px x 850px
+    @media only screen and (max-width: 25em) and (max-height: 53.13em) {
+      transform: translate(-50%, -40%);
+    }
+    
+    // 350px x 600px
+    @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
+      transform: translate(-50%, -20%);
+    }
+  }
+
+  &:hover &__ImageWrapper::before{
+    border: 2px solid $red2;
+  }
+
+  &__ImageWrapper::before,
+  &__NameWrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8rem * .7;
+    height: 8rem * .7;
+    z-index: -1;
+    border-radius: 50%;
+    transition: all 300ms ease-out;
+
+    // 800px x 1050px
+    @media only screen and (max-width: 50em) and (max-height: 65.63em) {
+      width: 9rem * .75;
+      height: 9rem * .75;
+    }
+    
+    // 450px x 850px
+    @media only screen and (max-width: 28.13em) and (max-height: 53.13em) {
+      width: 8.5rem * .75;
+      height: 8.5rem * .75;
+    }
+    
+    // 450px x 750px
+    @media only screen and (max-width: 28.13em) and (max-height: 46.88em) {
+      width: 8rem * .75;
+      height: 8rem * .75;
+    } 
+
+    // 400px x 850px
+    @media only screen and (max-width: 25em) and (max-height: 53.13em) {
+      width: 8rem * .75;
+      height: 8rem * .75;
+    } 
+    
+    // 400px x 700px
+    @media only screen and (max-width: 25em) and (max-height: 43.75em) {
+      width: 8rem * .7;
+      height: 8rem * .7;
+    }
+
+    // 350px x 600px
+    @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
+      width: 7rem * .7;
+      height: 7rem * .7;
+    }
+  }
+  
+  // Skill icon wrapper
+  &__ImageWrapper {
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    position: relative;
+    transition: all 300ms ease-out;
+    backface-visibility: hidden;
+  }
+    
+  &__ImageWrapper::before{
+    border: 2px solid $blue3;     
+  }
+
+  // Skill icon
+  &__Image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    backface-visibility: hidden;
+  }
+
+  // Skill name wrapper
+  &__NameWrapper {
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    opacity: 0;
+    transition: all 300ms ease-out;
+    transform: translate(-50%, -4rem);
+    backface-visibility: hidden;
+  }
+
+  // Skill name
+  &__Name {
+    display: block;
+    color: $light-gray1;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: $smaller-letter-spacing;
+    text-align: center;
+    backface-visibility: hidden;
+    white-space: nowrap;
+
+    // 450px x 850px
+    @media only screen and (max-width: 28.13em) and (max-height: 53.13em) {
+      font-size: $normal-font-size;
+      white-space: normal;
+    }
+    
+    // 450px x 750px
+    @media only screen and (max-width: 28.13em) and (max-height: 46.88em) {
+      white-space: normal;
+    } 
+    
+    // 400px x 850px
+    @media only screen and (max-width: 25em) and (max-height: 53.13em) {
+      font-size: $normal-font-size;
+      white-space: nowrap;
+    } 
+    
+    // 350px x 600px
+    @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
+      font-size: 1.5rem;
+      letter-spacing: $smallest-letter-spacing;
+      white-space: normal;
+    }
+  }
+}

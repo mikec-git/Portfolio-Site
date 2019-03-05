@@ -1,0 +1,29 @@
+@import '../../../../Styles/variables';
+
+.NavItems {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backface-visibility: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000000;
+
+  // Initially hide navitems
+  & > * {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  // To give effect of all other links becoming dull (selecting all of the children navLink Text element)
+  &:hover > * > *:first-child > *:first-child {
+    // 450px x 900px min
+    @media screen and (min-width: 28.13em) and (min-height: 56.25em) {
+      color: rgba($dark-gray3, 0.5);
+    }
+  }
+}

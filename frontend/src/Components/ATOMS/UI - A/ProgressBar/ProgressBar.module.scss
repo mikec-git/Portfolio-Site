@@ -1,0 +1,158 @@
+@import '../../../../Styles/variables';
+
+.ProgressBar {
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  position: fixed;
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 10000000;
+  backface-visibility: hidden;  
+  background-image: radial-gradient(circle at 50% 50%, #000000 25%, #0f0f0f 70%, #2f2f2f);
+  transition: all 750ms ease-in;
+  
+  &__Percent {
+    font-size: $medium-small-font-size;
+    letter-spacing: $smaller-letter-spacing;
+    margin-left: -$smaller-letter-spacing/2;
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    backface-visibility: hidden;
+  }
+
+  &__Logo {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 13rem;
+    height: auto;
+    animation: neonShadow 20000ms ease-in-out infinite;
+    backface-visibility: hidden;
+    opacity: 0;
+  }
+
+  &__Bar {
+    display: block;
+    height: 3px;
+    width: 100%;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) scaleX(0);
+    transform-origin: left;
+    z-index: -10;
+    border-radius: 10px;
+
+    transition: all 300ms easeout;
+    animation: barShadow 20000ms ease-in-out infinite;
+  }
+
+  &_exit {
+    opacity: 1;
+  }
+
+  &_exit_active {
+    opacity: 0;
+  }
+
+  &_exit_done {
+    opacity: 0;
+  }
+}
+
+@keyframes barShadow {
+  0% {
+    box-shadow: 0 0 0 $pink1;
+    background-color: $pink1;
+  }
+  
+  12.5% {
+    box-shadow: 0 0 20px $pink1;
+    background-color: $pink1;
+  }
+  
+  25% {
+    box-shadow: 0 0 0 $green1;
+    background-color: $green1;
+  }
+  
+  37.5% {
+    box-shadow: 0 0 20px $green1;
+    background-color: $green1;
+  }
+  
+  50% {
+    box-shadow: 0 0 0 $yellow1;
+    background-color: $yellow1;
+  }
+  
+  62.5% {
+    box-shadow: 0 0 20px $yellow1;
+    background-color: $yellow1;
+  }
+  
+  75% {
+    box-shadow: 0 0 0 $blue1;
+    background-color: $blue1;
+  }
+  
+  87.5% {
+    box-shadow: 0 0 20px $blue1;
+    background-color: $blue1;
+  }
+  
+  100% {
+    box-shadow: 0 0 0 $pink1;
+    background-color: $pink1;
+  }
+}
+
+@keyframes neonShadow {
+  0% {
+    filter: drop-shadow(0 0 0 $pink1);
+  }
+  
+  12.5% {
+    filter: drop-shadow(0 0 25px $pink1);
+  }
+
+  25% {
+    filter: drop-shadow(0 0 0 $green1);
+  }
+  
+  37.5% {
+    filter: drop-shadow(0 0 25px $green1);
+  }
+  
+  50% {
+    filter: drop-shadow(0 0 0 $yellow1);
+  }
+  
+  62.5% {
+    filter: drop-shadow(0 0 25px $yellow1);
+  }
+  
+  75% {
+    filter: drop-shadow(0 0 0 $blue1);
+  }
+  
+  87.5% {
+    filter: drop-shadow(0 0 25px $blue1);
+  }
+  
+  100% {
+    filter: drop-shadow(0 0 0 $pink1);
+  }
+}

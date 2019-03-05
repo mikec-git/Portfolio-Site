@@ -1,0 +1,43 @@
+@import '../../../../Styles/variables';
+
+.Year {
+  display: block;
+  backface-visibility: hidden;
+
+  &_portfolio {
+    width: max-content;
+  }
+
+  &__Letters {
+    display: inline-block;
+    backface-visibility: hidden;
+    
+    &_portfolio {
+      color: $light-gray2;
+      font-size: $medium-font-size;
+      letter-spacing: $large-letter-spacing;
+      font-weight: bold;      
+      text-shadow: 0 0 1px #333;
+      
+      // 1450px
+      @media only screen and (max-width: 90.63em) {
+        font-size: $small-font-size;
+      }
+      
+      // 900px
+      @media only screen and (max-width: 56.25em) {
+        letter-spacing: $medium-letter-spacing;
+      }
+
+      // 450px
+      @media only screen and (max-width: 28.13em) {
+        font-size: $smaller-font-size;
+      }
+      
+      // 600px x <400px
+      @media only screen and (max-width: 37.5em) and (max-height: 25em) {
+        font-size: $smaller-font-size;
+      }
+    }
+  }
+}

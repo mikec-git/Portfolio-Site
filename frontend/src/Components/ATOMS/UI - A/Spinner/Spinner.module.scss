@@ -1,0 +1,102 @@
+@import '../../../../Styles/variables';
+$ncirc: 2;
+  
+.Spinner {
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: spin 5s infinite linear;
+  
+  &,
+  &__Wrapper {
+    width: 22rem;
+    height: 21rem;
+    position: absolute;
+    backface-visibility: hidden;
+  }
+
+  &__Wrapper {
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+    
+  &__Circle {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+
+    &_inner {
+      width: 100%;
+      height: 100%;
+      background-clip: padding;
+      backface-visibility: hidden;
+      
+      &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        border-right: none;
+        border-top: none;
+        animation: neon 20000ms ease-in-out infinite;
+        backface-visibility: hidden;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+      
+@for $i from 0 through $ncirc {
+  .Spinner {
+    &__Circle:nth-of-type(#{$i}) {
+      transform: rotate($i * 90deg);
+    }
+
+    &__Circle_inner:nth-of-type(#{$i}) {
+      animation: spin 2s infinite linear;
+    }
+  }
+}
+
+@keyframes neon {
+  0%,
+  12.5% {
+    border: 5px solid transparentize($pink1, 0.3);
+    box-shadow: inset 0px 0px 10px transparentize($pink1, 0.85);    
+  }
+
+  25%,
+  37.5% {
+    border: 5px solid transparentize($green1, 0.3);
+    box-shadow: inset 0px 0px 10px transparentize($green1, 0.85);
+  }
+  
+  50%,
+  62.5% {
+    border: 5px solid transparentize($yellow1, 0.3);
+    box-shadow: inset 0px 0px 10px transparentize($yellow1, 0.85);
+  }
+  
+  75%,
+  87.5% {
+    border: 5px solid transparentize($blue1, 0.3);
+    box-shadow: inset 0px 0px 10px transparentize($blue1, 0.85);
+  }
+  
+  100% {
+    border: 5px solid transparentize($pink1, 0.3);
+    box-shadow: inset 0px 0px 10px transparentize($pink1, 0.85);
+  }
+}

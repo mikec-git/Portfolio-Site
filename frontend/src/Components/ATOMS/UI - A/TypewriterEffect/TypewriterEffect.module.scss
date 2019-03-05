@@ -1,0 +1,47 @@
+@import '../../../../Styles/variables';
+
+.TypewriterEffect {
+  position: relative;
+  color: white;
+  display: block;
+  min-width: 2px;
+  padding-right: .25rem;
+  backface-visibility: hidden;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    min-width: 2px;
+    min-height: $medium-small-font-size;
+    animation: blinkingLine 1250ms infinite;
+    backface-visibility: hidden;
+    
+    // 1280px x 550px
+    @media only screen and (max-width: 80em) and (max-height: 34.68em) {
+      min-height: $medium-small-font-size;
+    }
+  }
+  
+  &_about {
+    font-size: $medium-small-font-size;
+    min-height: $medium-small-font-size;
+    letter-spacing: $small-letter-spacing;
+    
+    // 1280px x 550px
+    @media only screen and (max-width: 80em) and (max-height: 34.68em) {
+      font-size: $small-font-size;
+      min-height: $small-font-size;
+    }
+  }
+}
+
+@keyframes blinkingLine {
+  from {
+    border-right: 2px solid $blue1;
+  }
+  
+  to {
+    border-right: none;
+  }
+}

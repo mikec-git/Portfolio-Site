@@ -1,0 +1,123 @@
+@import '../../../../Styles/variables';
+
+.NavItem {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;  
+  padding: 5rem 0; 
+  width: 100%;
+  backface-visibility: hidden;
+
+  // 700px
+  @media only screen and (max-width: 43.75em) {
+    padding: 3.5rem 0;
+  }
+  
+  // 600px height
+  @media only screen and (max-height: 37.5em) {
+    padding: 2.5rem;
+  }
+  
+  // 400px height
+  @media only screen and (max-height: 25em) {
+    padding: 2rem;
+  }
+  
+  // 400px x 600px
+  @media only screen and (max-width: 25em) and (max-height: 37.5em) {
+    padding: 3rem;
+  }
+
+  &__TextWrapper {
+    backface-visibility: hidden;
+    width: 100%;
+  }
+  
+  &__Text {
+    position: relative;
+    color: $light-gray1;
+    font-size: $larger-font-size;
+    font-family: 'Mohave';
+    font-weight: 300;
+    letter-spacing: $large-letter-spacing;
+    transform: scaleY(1.25);
+    transition: all 400ms ease-out;
+    backface-visibility: hidden;
+
+    // 400px x 700px
+    @media only screen and (max-width: 25em) and (max-height: 43.75em) {
+      font-size: $medium-large-font-size;
+    }
+
+    // 300px
+    @media only screen and (max-width: 18.75em) {
+      font-size: $medium-font-size;
+    }
+
+    // 600px height
+    @media only screen and (max-height: 37.5em) {
+      font-size: $medium-large-font-size;
+    }
+    
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      backface-visibility: hidden;
+      left: -12.5%;
+      transform-origin: left;
+      transform: translate(0, -50%);
+      width: 0;
+      height: 5px;
+      background-color: rgba($purple1, .4);
+      z-index: -20;
+      transition: all 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    }
+
+    &::before {
+      top: 40%;
+    }
+    
+    &::after {
+      top: 60%;
+    }
+  }
+
+  &__Number {
+    font-size: $hugest-font-size;
+    font-family: 'Code';
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: rgba($light-gray3, 0.1);
+    transform: translate(-50%, -50%);
+    transition: all 200ms ease-out;
+    backface-visibility: hidden;
+    
+    // 400px x 700px
+    @media only screen and (max-width: 25em) and (max-height: 43.75em) {
+      font-size: $huger-font-size;
+    }
+
+    // 600px height
+    @media only screen and (max-height: 37.5em) {
+      font-size: $largest-font-size;
+    }
+  }
+
+  &:hover &__Text::before,
+  &:hover &__Text::after {
+    width: 125%;
+  }
+
+  &:hover &__Text {
+    color: white !important;
+  }
+
+  &:hover &__Number {
+    color: rgba($light-gray1, 0.2);
+  }
+}

@@ -1,0 +1,71 @@
+@import '../../../../Styles/variables';
+
+.Bio {
+  display: block;
+  backface-visibility: hidden;
+  position: relative;
+    
+  // 450px x 900px
+  @media only screen and (max-width: 28.13em) and (max-height: 56.25em) {
+    & > *:nth-of-type(4) {
+      display: none;
+    }
+  }
+
+  &__Paragraph,
+  &__Closing {
+    backface-visibility: hidden;
+    color: $light-gray1;
+    font-size: 1.7rem;
+    letter-spacing: $smaller-letter-spacing;
+    line-height: 1.8;
+    font-weight: bold;
+    width: 100%;
+    
+    // 800px x 1050px
+    @media only screen and (max-width: 50em) and (max-height: 65.63em) {
+      font-size: $smaller-font-size;
+    }
+        
+    // 450px x 850px
+    @media only screen and (max-width: 28.125em) and (max-height: 53.13em) {
+      font-size: 1.9rem;
+    }
+
+    // 450px x 800px
+    @media only screen and (max-width: 28.125em) and (max-height: 50em) {
+      font-size: 1.8rem;
+    }
+
+    // 400px x 850px
+    @media only screen and (max-width: 25em) and (max-height: 53.13em) {
+      font-size: 1.8rem;
+    }
+    
+    // 400px x 700px
+    @media only screen and (max-width: 25em) and (max-height: 43.75em) {
+      font-size: 1.7rem;
+    }
+    
+    // 350px x 600px
+    @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
+      font-size: 1.6rem;
+    }
+  }
+  
+  &__Paragraph {
+    font-family: 'Alcubierre';
+    top: 1rem;    
+    margin-bottom: 1rem;    
+
+    // 450px x 900px
+    @media only screen and (max-width: 28.13em) and (max-height: 56.25em) {
+      margin-bottom: .5rem;
+    }
+
+    // 350px x 700px
+    @media only screen and (max-width: 21.88em) and (max-height: 43.75em) {
+      margin-bottom: .25rem;
+    }
+  }
+}

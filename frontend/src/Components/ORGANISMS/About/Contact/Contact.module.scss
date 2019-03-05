@@ -1,0 +1,24 @@
+@import '../../../../Styles/variables';
+
+.Contact {
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  
+  &__Text {
+    position: relative;
+    width: 30rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 10rem;
+  }
+}

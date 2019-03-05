@@ -1,0 +1,192 @@
+@import '../../../../Styles/variables';
+
+.TitleMain {
+  display: block;
+  font-weight: 300;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  position: relative;
+  
+  &_landing {
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+
+    // 1550px x 750px
+    @media only screen and (max-width: 96.88em) and (max-height: 46.88em) {
+      top: 65%;
+    }
+    
+    // 1100px x 1400px
+    @media only screen and (max-width: 68.75em) and (max-height: 87.5em) {
+      top: 58.5%;
+    }
+
+    // 800px x 1100px
+    @media only screen and (max-width: 50em) and (max-height: 68.75em) {
+      top: 57%;
+    }
+
+    // 350px x 600px
+    @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
+      top: 62%;
+    }
+  }
+  
+  &_portfolio {
+    font-family: 'Blanch Inline';
+    width: max-content;
+  }
+
+  &_about {
+    font-family: 'Mohave';
+    width: max-content;
+    text-transform: none;
+  }
+  
+  &_contact {
+    width: max-content;
+    text-transform: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    // 1280px x 550px
+    @media only screen and (max-width: 80em) and (max-height: 34.68em) {
+      bottom: 50%;
+    }
+  }
+
+  &__Letters {
+    display: block;
+    backface-visibility: hidden;
+    
+    &_landing {
+      color: #fff;
+      font-size: $large-font-size;
+      font-weight: 400;
+      letter-spacing: $larger-letter-spacing;
+      margin-left: $larger-letter-spacing / 2;
+      
+      // 1100px x 800px
+      @media only screen and (max-width: 68.75em) and (max-height: 50em) {
+        font-size: $medium-large-font-size;
+      }
+      
+      // 450px x 900px
+      @media only screen and (max-width: 28.13em) and (max-height: 56.25em) {
+        font-size: $medium-large-font-size;
+      }
+      
+      // 400px x 700px
+      @media only screen and (max-width: 25em) and (max-height: 43.75em) {
+        font-size: 4.5rem;
+      }
+      
+      // 350px x 600px
+      @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
+        font-size: $medium-font-size;
+        letter-spacing: $large-letter-spacing;
+      }
+    }
+    
+    &_portfolio {
+      font-size: $huger-font-size;
+      letter-spacing: $larger-letter-spacing;
+      font-weight: 400;
+      text-shadow: 0 0 6px #000;
+
+      // 1450px
+      @media only screen and (max-width: 90.63em) {
+        font-size: $huge-font-size;
+      }
+
+      // 950px 
+      @media only screen and (max-width: 59.38em) {
+        letter-spacing: $large-letter-spacing;
+      }
+      
+      // 450px
+      @media only screen and (max-width: 28.13em) {
+        font-size: $huge-font-size;
+      }
+      
+      // 400px x 700px
+      @media only screen and (max-width: 25em) and (max-height: 43.75em) {
+        font-size: $largest-font-size;
+      }
+
+      // 400px x 600px
+      @media only screen and (max-width: 25em) and (max-height: 37.5em) {
+        font-size: $larger-font-size;
+      }
+      
+      // 350px
+      @media only screen and (max-width: 21.88em) {
+        font-size: $large-font-size;
+      }
+
+      // 350px x <600px
+      @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
+        font-size: $large-font-size;
+      }
+    }
+    
+    &_about {
+      color: $light-gray1;
+      font-size: $largest-font-size;
+      letter-spacing: $medium-letter-spacing;
+      font-weight: 300;
+      
+      // 1100px x 800px
+      // 800px x 1100px
+      @media only screen and (max-width: 68.75em) and (max-height: 50em),
+      only screen and (max-width: 50em) and (max-height: 68.75em) {
+        font-size: $larger-font-size;
+      }
+
+      // 600px x 350px
+      @media only screen and (max-width: 37.5em) and (max-height: 21.88em) {
+        font-size: $medium-small-font-size;
+      }
+
+      // 400px x 850px
+      // 450px x 750px
+      @media only screen and (max-width: 25em) and (max-height: 53.13em),
+      (max-width: 28.13em) and (max-height: 46.88em) {
+          font-size: $large-font-size;
+      }
+
+      // 350px x 700px
+      @media only screen and (max-width: 21.88em) and (max-height: 43.75em) {
+        font-size: $medium-large-font-size;
+      }
+
+      // 350px x 600px
+      @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
+        font-size: $medium-font-size;
+      }
+    }
+    
+    &_contact {
+      color: #fff;
+      font-size: $medium-font-size;
+      letter-spacing: $small-letter-spacing;
+      font-weight: 300;
+
+      // 1280px x 550px
+      @media only screen and (max-width: 80em) and (max-height: 34.68em) {
+        font-size: $small-font-size;
+      }
+    }
+  }
+
+  &__Letter {
+    display: inline-block;
+    position: relative;
+  }
+}

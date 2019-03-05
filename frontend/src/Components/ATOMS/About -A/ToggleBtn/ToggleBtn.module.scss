@@ -1,0 +1,196 @@
+@import '../../../../Styles/variables';
+
+.ToggleBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 100px;
+  width: auto;
+  position: absolute;
+  left: 50%;
+
+  // 1400 px @ 150dpi
+  // 750 px
+  @media only screen and (max-width: 87.5em) and (min-resolution: 150dpi),
+  only screen and (max-width: 46.88em) {
+    display: none;
+  }
+  
+  &_top {
+    top: 5%;
+    transform: translate(-50%, 0) rotateZ(180deg);
+    opacity: 0;
+    visibility: hidden;
+    
+    // 1280px x 550px
+    @media only screen and (max-width: 80em) and (max-height: 34.68em) {
+      top: 2.5%;
+    }
+  }
+  
+  &_bottom {
+    bottom: 5%;
+    transform: translate(-50%, 0);
+    
+    // 1280px x 550px
+    @media only screen and (max-width: 80em) and (max-height: 34.68em) {
+      bottom: 3%;
+    }
+
+    // 800px x 1000px 
+    @media only screen and (max-width: 50em) and (max-height: 62.5em) {
+      bottom: 1%;
+    }
+  }
+  
+  &__Link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-left: $medium-letter-spacing / 2;
+    color: inherit;
+  }
+  
+  &:hover &__Text {
+    opacity: 1;    
+    color: #fff;
+  }
+  
+  &__Text {
+    display: block;
+    position: relative;
+    margin-bottom: 1.5rem;
+    transition: all 400ms ease-in 50ms;
+    width: max-content;
+    
+    font-size: $smaller-font-size;
+    text-transform: uppercase;
+    letter-spacing: $medium-letter-spacing;
+    color: $light-gray1;
+    
+    // 1280px x 550px
+    @media only screen and (max-width: 80em) and (max-height: 34.68em) {
+      font-size: $normal-font-size;
+    }
+
+    &_top {
+      transform: rotateZ(180deg);
+    }
+  }
+
+  &__Arrow {
+    position: relative;
+    width: 100px;
+
+    span{
+      display: block;
+      width: 28px;
+      height: 28px;
+      border-bottom: 4px solid $pink1;
+      border-right: 4px solid $pink1;
+      border-radius: 4px;
+      transform: rotate(45deg);
+      margin: -10px auto;
+      animation: neonColors 10000ms ease-in-out infinite,
+      animate 2.75s ease-in-out infinite;
+      
+      // 1280px x 550px
+      @media only screen and (max-width: 80em) and (max-height: 34.68em) {
+        width: 20px;
+        height: 20px;
+        animation: neonColors2px 10000ms ease-in-out infinite,
+        animate 2.75s ease-in-out infinite;
+      }
+
+      // 800px x 1000px 
+      @media only screen and (max-width: 50em) and (max-height: 62.5em) {
+        width: 20px;
+        height: 20px;
+        animation: neonColors2px 10000ms ease-in-out infinite,
+        animate 2.75s ease-in-out infinite;
+      }
+    }
+    
+    span:nth-child(2) {
+      animation-delay: -0.25s;
+    }
+    
+    span:nth-child(3) {
+      animation-delay: -0.45s;
+    }    
+  }
+}
+
+@keyframes animate {
+  0%{
+    opacity: 0;
+    transform: rotate(45deg) translate(-5px, -5px);
+  }
+
+  50%{
+    opacity: 1;
+  }
+
+  100%{
+    opacity: 0;
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+}
+
+@keyframes neonColors {
+  0% {
+    border-bottom: 4px solid $pink1;
+    border-right: 4px solid $pink1;
+  }
+  
+  25% {
+    border-bottom: 4px solid $green1;
+    border-right: 4px solid $green1;
+  }
+  
+  50% {
+    border-bottom: 4px solid $yellow1;
+    border-right: 4px solid $yellow1;
+  }
+  
+  75% {
+    border-bottom: 4px solid $blue1;
+    border-right: 4px solid $blue1;
+  }
+  
+  100% {
+    border-bottom: 4px solid $pink1;
+    border-right: 4px solid $pink1;
+  }
+}
+
+@keyframes neonColors2px {
+  0% {
+    border-bottom: 2px solid $pink1;
+    border-right: 2px solid $pink1;
+  }
+  
+  25% {
+    border-bottom: 2px solid $green1;
+    border-right: 2px solid $green1;
+  }
+  
+  50% {
+    border-bottom: 2px solid $yellow1;
+    border-right: 2px solid $yellow1;
+  }
+  
+  75% {
+    border-bottom: 2px solid $blue1;
+    border-right: 2px solid $blue1;
+  }
+  
+  100% {
+    border-bottom: 2px solid $pink1;
+    border-right: 2px solid $pink1;
+  }
+}

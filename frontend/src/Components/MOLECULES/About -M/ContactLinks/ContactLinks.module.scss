@@ -1,0 +1,21 @@
+.ContactLinks { 
+  display: flex;
+  margin-top: 2rem; 
+  
+  // 1400px x 1100px
+  // 1100px x 1400px
+  @media only screen and (max-width: 87.5em) and (max-height: 68.75em) and (min-resolution: 150dpi),
+  only screen and (max-width: 68.75em) and (max-height: 87.5em) and (min-resolution: 150dpi),
+  only screen and (max-width: 25em) and (max-height: 56.25em) {
+    margin-top: 1rem;
+  }
+  
+  // 450px x 900px
+  @media only screen and (max-width: 28.13em) and (max-height: 56.25em) {
+    margin-top: .75rem;
+  }
+
+  & > *:not(:last-child) {
+    margin-right: 4rem;
+  }
+}

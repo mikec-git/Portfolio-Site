@@ -1,0 +1,122 @@
+@import '../../../../Styles/variables';
+
+.Burger {
+  display: block;
+  backface-visibility: hidden;
+  padding: 1rem;
+  width: 10rem;
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translate(0, -50%);  
+  z-index: 5000000;
+  border-radius: 50%;
+  cursor: pointer;
+
+  // 750px
+  @media only screen and (max-width: 46.87em) {
+    left: 50%;
+    top: 0rem;
+    transform: translate(-50%, 0);
+  }  
+  
+  // Hamburger layer wrappers 
+  &__TopWrapper,
+  &__MidWrapper,
+  &__BotWrapper {
+    display: block;
+    backface-visibility: hidden;
+    overflow: hidden;
+    margin: 2rem 0;
+    
+    // 400px x 700px
+    @media only screen and (max-width: 25em) and (max-height: 43.75em) {
+      margin: 1.65rem 0;
+    }
+
+    // 400px x 600px
+    @media only screen and (max-width: 25em) and (max-height: 37.5em) {
+      margin: 1.75rem 0;
+    }
+
+    // 350px x 600px
+    @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
+      margin: 1.5rem 0;
+    }
+  }
+
+  // Hamburger layers
+  &__Top,
+  &__Mid, 
+  &__Bot {
+    display: block;
+    width: 8rem;
+    height: 2px;
+    background-color: $light-gray1;
+    transition: all 800ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    backface-visibility: hidden;
+  }
+
+  // Circle for when nav is open
+  &__Ring {
+    display: block;
+    width: 1.75rem;
+    height: 1.75rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid $light-gray1;
+    border-radius: 50%;
+    background-color: transparent !important;
+    opacity: 0;
+    backface-visibility: hidden;
+    transition: 1100ms cubic-bezier(0.075, 0.82, 0.165, 1) filter;
+  }
+
+  // Circle for when nav is open
+  &__BgCircle {
+    display: block;
+    position: absolute;
+    backface-visibility: hidden;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    border-radius: 50%;
+    opacity: 0.15;
+  }
+  
+  // Animation for hamburger hover
+  &:hover &__Top,
+  &:hover &__Bot {
+    width: 3rem;
+    background-color: #fff;
+  }
+
+  &:hover &__Mid {
+    background-color: #fff;
+  }
+}
+
+// Class for when nav is open
+.open {
+  &:hover .Burger__Mid {
+    width: 6rem;
+    transform: translateX(1rem); // (8rem - 6rem) / 2
+  }
+
+  // Will transition to the following:
+  .Burger__Top,
+  .Burger__Bot {
+    width: 3rem;
+    transform: translateX(-1rem);
+    opacity: 0;
+  }
+
+  .Burger__Mid {
+    width: 8rem;
+  }
+}

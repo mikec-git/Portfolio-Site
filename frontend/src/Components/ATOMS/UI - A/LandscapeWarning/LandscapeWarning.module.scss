@@ -1,0 +1,80 @@
+@import '../../../../Styles/variables';
+
+.LandscapeWarning {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  &__Text {
+    display: none;
+  }
+
+  &__Image {
+    width: 15rem;
+    height: 15rem;
+    
+    // 850px x 450px
+    @media only screen and (max-width: 53.13em) and (max-height: 28.13em) {
+      width: 11rem;
+    }
+    
+    // 750px x 450px
+    @media only screen and (max-width: 46.88em) and (max-height: 28.13em) {
+      width: 11rem;
+    }
+    
+    // 700px x 400px
+    @media only screen and (max-width: 43.75em) and (max-height: 25em) {
+      width: 10rem;
+    }
+    
+    // 600px x 350px
+    @media only screen and (max-width: 37.5em) and (max-height: 21.88em) {
+      width: 8rem;
+      margin-top: -2rem;
+    }
+  }
+  
+  @media only screen and (max-width: 1000px) and (max-height: 800px) and (orientation: landscape) and (min-resolution: 150dpi) {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 500ms ease-out;
+
+    &__Text {
+      font-size: $large-font-size;
+      display: block;
+      
+      // 850px x 450px
+      @media only screen and (max-width: 53.13em) and (max-height: 28.13em) {
+        font-size: $medium-large-font-size;
+      }
+      
+      // 750px x 450px
+      @media only screen and (max-width: 46.88em) and (max-height: 28.13em) {
+        font-size: $medium-large-font-size;
+      }
+      
+      // 700px x 400px
+      @media only screen and (max-width: 43.75em) and (max-height: 25em) {
+        font-size: $medium-font-size;
+      }
+
+      // 600px x 350px
+      @media only screen and (max-width: 37.5em) and (max-height: 21.88em) {
+        font-size: $medium-small-font-size;
+      }
+    }
+  }
+}

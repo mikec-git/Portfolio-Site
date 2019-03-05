@@ -1,0 +1,90 @@
+@import '../../../../Styles/variables';
+
+.Button {
+  width: 100%;
+  position: relative;
+  transition: all 300ms ease-out;
+  cursor: pointer;
+
+  &__Project {
+    width: max-content;
+  }
+
+  &_blue3:hover {
+    filter: drop-shadow(0 0 1rem rgba($blue3, .5));
+  }
+  
+  &::before, 
+  &::after {
+    content: '';
+    position: absolute;
+    transition: all 300ms;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-radius: 5px;
+  }
+  
+  &::before {
+    z-index: 1;
+    opacity: 0;
+    transform: scale(0.1, 1);
+  }
+  
+  &_blue3::before {
+    background: rgba($blue3, .7);
+  }
+  
+  &:hover::before {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+  
+  &::after {
+    transition: all 0.3s;
+  }
+  
+  &_blue3::after {
+    border: 1px solid rgba($blue3, 0.5);
+  }
+  
+  &:hover::after {
+    transform: scale(1, .1);
+    opacity: 0;
+  }
+  
+  &__Text {
+    position: relative;
+    color: white;
+    display: block;
+    padding: 1.5rem 5rem;
+    text-align: center;
+    font-size: $smaller-font-size;
+    letter-spacing: $small-letter-spacing;    
+    transition: all 0.3s;
+    transform: scale(1, 1);
+    z-index: 10;
+    transition: all 300ms ease-out;
+    
+    // 850px x 400px
+    @media only screen and (max-width: 53.13em) and (max-height: 25em) {
+      padding: 1rem 5rem;
+      font-size: $normal-font-size;
+    }
+    
+    // 750px x 450px
+    @media only screen and (max-width: 46.88em) and (max-height: 28.13em) {
+      font-size: 1.7rem;  
+    }
+
+    // 600px x 350px
+    @media only screen and (max-width: 37.5em) and (max-height: 21.88em) {
+      font-size: $normal-font-size;
+      padding: .75rem 5rem;
+    }
+  }  
+}
+
+

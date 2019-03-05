@@ -1,0 +1,11 @@
+@import '../../Styles/variables';
+
+.About {
+  display: block;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+  perspective: 60rem;
+}

@@ -1,0 +1,122 @@
+@import '../../../../Styles/variables';
+
+.Tech {
+  display: block;
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+
+  backface-visibility: hidden;
+  transition: all 200ms ease-out;
+  
+  // 1400px x 1100px
+  @media only screen and (max-width: 87.5em) and (max-height: 68.75em) {
+    width: 4.25rem;
+    height: 4.25rem;
+  }
+  
+  // 1280px x 550px
+  @media only screen and (max-width: 80em) and (max-height: 34.68em) {
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+  
+  // 1100px x 1400px
+  @media only screen and (max-width: 68.75em) and (max-height: 87.5em) {
+    width: 4.15rem;
+    height: 4.15rem;
+  }
+
+  // 1100px x 800px
+  @media only screen and (max-width: 68.75em) and (max-height: 50em) {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  // 800px x 1100px
+  @media only screen and (max-width: 50em) and (max-height: 68.75em) {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  // 750px
+  @media only screen and (max-width: 46.88em) {
+    width: 4.75rem;
+    height: 4.75rem;
+  }
+  
+  // 550px
+  @media only screen and (max-width: 34.38em) {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  // 450px x 900px
+  @media only screen and (max-width: 28.13em) and (max-height: 56.25em) {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+  
+  // 450px x 850px
+  @media only screen and (max-width: 28.13em) and (max-height: 53.13em) {
+    width: 4.7rem;
+    height: 4.7rem;    
+  } 
+
+  // 450px x 750px
+  @media only screen and (max-width: 28.13em) and (max-height: 46.88em) {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  // 400px x 700px
+  @media only screen and (max-width: 25em) and (max-height: 43.75em) {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  // 350px x 600px
+  @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  
+  &:hover::before {
+    opacity: 1;
+  }
+  
+  &:hover &__Image {
+    opacity: 0.12;
+  }
+  
+  &::before {
+    content: attr(data-text);
+    font-size: $normal-font-size;
+    font-weight: bold;
+    text-shadow: 0 0 2px #000;
+    pointer-events: none;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    transform: translate3d(-50%, -50%, 0);
+    transition: all 200ms ease-out;
+    backface-visibility: hidden;
+    padding: 1rem 1rem;
+    text-align: center;
+    opacity: 0;
+    letter-spacing: $smaller-letter-spacing;
+    z-index: 100;
+  }
+  
+  &__Image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: all 200ms ease-out;
+    object-fit: contain;
+    transform: translateZ(0);
+  }
+}

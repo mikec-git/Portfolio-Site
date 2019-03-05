@@ -1,0 +1,36 @@
+// ALCUBIERRE
+@font-face {
+  font-family: 'Alcubierre';
+  src: local('Alcubierre'), url('./Assets/fonts/Alcubierre.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// CODE
+@font-face {
+  font-family: 'Code';
+  src: local('Code Bold'), url('./Assets/fonts/Code-Bold.otf');
+  font-weight: bold;
+  font-style: bold;
+}
+
+// BLANCH
+@font-face {
+  font-family: 'Blanch';
+  src: local('Blanch'), url('./Assets/fonts/Blanch/BLANCH_CONDENSED.otf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Blanch Inline';
+  src: local('Blanch Inline'), url('./Assets/fonts/Blanch/BLANCH_CONDENSED_INLINE.otf');
+  font-weight: 400;
+}
+
+// MOHAVE
+@font-face {
+  font-family: 'Mohave';
+  src: local('Mohave Light'), url('./Assets/fonts/Mohave-Light.otf');
+  font-weight: 300;
+  font-style: normal;
+}

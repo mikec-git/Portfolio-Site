@@ -1,0 +1,12 @@
+.Portfolio {
+  position: relative;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  perspective: 300rem;
+  perspective-origin: 35% 60%;
+  pointer-events: none;
+}

@@ -1,0 +1,145 @@
+@import '../../../../Styles/variables';
+
+.TitleSecondary {
+  display: block;
+  font-weight: 300;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  
+  &_landing {
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+
+    // 1550px x 750px
+    @media only screen and (max-width: 96.88em) and (max-height: 46.88em) {
+      top: 71.5%;
+    }
+    
+    // 1100px x 1400px
+    @media only screen and (max-width: 68.75em) and (max-height: 87.5em) {
+      top: 62%;
+    }
+
+    // 1100px x 800px
+    @media only screen and (max-width: 68.75em) and (max-height: 50em) {
+      top: 63%;
+    }
+    
+    // 800px x 1100px
+    @media only screen and (max-width: 50em) and (max-height: 68.75em) {
+      top: 61%;
+    }
+    
+    // 450px x 800px
+    @media only screen and (max-width: 28.13em) and (max-height: 50em) {
+      top: 61.5%;
+    }
+    
+    // 350px x 600px
+    @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
+      top: 66%;
+    }
+  }
+  
+  &_about {
+    text-transform: none;
+    width: max-content;
+    margin-bottom: 2rem;
+  }
+  
+  &_contact {
+    text-transform: none;
+    width: max-content;
+    margin-right: 1rem;
+  }
+  
+  &__Letters {
+    backface-visibility: hidden;
+
+    &_landing {
+      color: #fff;
+      font-size: $small-font-size;
+      letter-spacing: $large-letter-spacing;
+      margin-left: $large-letter-spacing / 2;
+      font-weight: 400;
+
+      // 1100px x 800px
+      @media only screen and (max-width: 68.75em) and (max-height: 50em) {
+        font-size: $smaller-font-size;
+      }
+      
+      // 450px x 900px
+      @media only screen and (max-width: 28.13em) and (max-height: 56.25em) {
+        font-size: $smaller-font-size;
+      }
+      
+      // 400px x 700px
+      @media only screen and (max-width: 25em) and (max-height: 43.75em) {
+        font-size: 1.9rem;
+      }
+
+      // 350px x 600px
+      @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
+        letter-spacing: $medium-letter-spacing;
+      }
+    }
+
+    &_about {
+      color: $light-gray1;
+      font-size: $medium-font-size;
+      letter-spacing: $medium-letter-spacing;
+      font-weight: 400;
+      
+      // 1100px x 1400px
+      @media only screen and (max-width: 68.75em) and (max-height: 87.5em) {
+        font-size: $small-font-size;
+      }
+
+      // 800px x 1050px
+      @media only screen and (max-width: 50em) and (max-height: 65.63em) {
+        font-size: $small-font-size;        
+        letter-spacing: $small-letter-spacing;
+      }
+
+      // 450px x 850px
+      @media only screen and (max-width: 28.125em) and (max-height: 53.13em) {
+        font-size: $small-font-size;
+        letter-spacing: $small-letter-spacing;
+      }
+
+      // 400px x 850px
+      // 450px x 750px
+      @media only screen and (max-width: 25em) and (max-height: 53.13em),
+      (max-width: 28.125em) and (max-height: 46.88em) {
+        font-size: $small-font-size;
+        letter-spacing: $small-letter-spacing;
+      }
+      
+      // 350px x 700px
+      @media only screen and (max-width: 21.88em) and (max-height: 43.75em) {
+        font-size: $smaller-font-size;
+      }
+    }
+
+    &_contact {
+      color: #fff;
+      font-size: $medium-small-font-size;
+      letter-spacing: $small-letter-spacing;
+      font-weight: 400;
+
+      // 1280px x 550px
+      @media only screen and (max-width: 80em) and (max-height: 34.68em) {
+        font-size: $small-font-size;
+      }
+    }
+  }
+
+  &__Letter {
+    position: relative;
+    display: inline-block;
+  }
+}

@@ -1,0 +1,137 @@
+@import '../../../../Styles/variables';
+
+.ProjectButton {
+  position: relative;
+	overflow: hidden;
+  padding: 0 3rem;
+  border-radius: 5px;
+  
+  font-size: $smaller-font-size;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 0 0 1px #000;
+  
+  transition: border-color 175ms, background-color 175ms;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  z-index: 1000;
+  backface-visibility: hidden;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+    
+  // 900px
+  @media only screen and (max-width: 56.25em) {
+    padding: 0 1.5rem;
+    width: 100%;
+  }
+  
+  // 400px
+  @media only screen and (max-width: 25em) {
+    padding: 0;
+  }
+
+  &_blue {
+    color: $blue0;
+    border: 2px solid $blue0;
+    
+    &::after {      
+      color: $blue2;
+    }
+
+    &:hover {
+      border-color: $blue2;
+      background-color: rgba($blue2, 0.1);
+    }
+  }
+
+  &_yellow {
+    color: $yellow0;
+    border: 2px solid $yellow0;
+
+    &::after {      
+      color: $yellow1;
+    }
+
+    &:hover {
+      border-color: $yellow1;
+      background-color: rgba($yellow1, 0.1);
+    }
+  }
+
+  &_orange {
+    color: $orange0;
+    border: 2px solid $orange0;
+    
+    &::after {      
+      color: $orange3;
+    }
+
+    &:hover {
+      border-color: $orange3;
+      background-color: rgba($orange3, 0.1);
+    }
+  }
+
+  &_pink {
+    color: $pink0;
+    border: 2px solid $pink0;
+    
+    &::after {      
+      color: $pink4;
+    }
+    
+    &:hover {
+      border-color: $pink4;
+      background-color: rgba($pink4, 0.1);
+    }
+  }
+
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translate(0, -50%);
+    text-align: center;
+    backface-visibility: hidden;
+    font-weight: bold;
+  }
+
+  & > span {
+    display: block;
+    backface-visibility: hidden;
+  }
+  
+  &::after,
+  & > span {
+    padding: 1.5rem 3rem;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: transform 175ms, opacity 175ms;
+        
+    // 550px
+    @media only screen and (max-width: 34.38em) {
+      padding: 1rem 2rem;
+    }
+    
+    // 400px x 600px
+    @media only screen and (max-width: 25em) and (max-height: 37.5em) {
+      padding: .7rem 2rem;
+    }
+  }
+  
+  &:hover::after {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  
+  &:hover > span {
+    opacity: 0;
+    transform: translate(0, 75%);
+  }
+}

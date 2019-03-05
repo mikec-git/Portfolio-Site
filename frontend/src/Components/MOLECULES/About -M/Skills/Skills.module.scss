@@ -1,0 +1,197 @@
+@import '../../../../Styles/variables';
+
+.Skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 300ms ease-out;
+  transform: translateZ(0);
+  
+  // 650px x 950px
+  // 450px x 850px
+  // 1280px x 550px
+  @media only screen and (max-width: 28.125em) and (max-height: 53.13em),
+  only screen and (max-width: 40.63em) and (max-height: 59.38em),
+  only screen and (max-width: 80em) and (max-height: 34.68em) {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    opacity: 0;  
+    padding: 15% 5% 0;
+    z-index: 100;
+    background-color: rgba(black, .9);
+    visibility: hidden;
+  }
+
+  // 1280px x 550px
+  @media only screen and (max-width: 80em) and (max-height: 34.68em) {
+    padding-top: 0;
+    padding-bottom: 5%;
+  }
+  
+  // 450px x 750px
+  @media only screen and (max-width: 28.125em) and (max-height: 46.88em) {
+    padding: 15% 5% 0;
+    transform: translate3d(-50%, -48%, 0);
+  }
+  
+  // 400px x 850px
+  @media only screen and (max-width: 25em) and (max-height: 53.13em) {
+    padding: 12% 7% 0;
+  }
+  
+  // 400px x 700px
+  @media only screen and (max-width: 25em) and (max-height: 43.75em) {
+    transform: translate3d(-50%, -50%, 0);
+    padding: 18% 5% 0;
+  }
+
+  // 350px x 600px
+  @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
+    padding: 20% 2% 0;
+  }
+  
+  &_open {
+    // 450px x 850px
+    // 650px x 950px
+    // 1280px x 550px
+    @media only screen and (max-width: 28.125em) and (max-height: 53.13em),
+    only screen and (max-width: 40.63em) and (max-height: 59.38em),
+    only screen and (max-width: 80em) and (max-height: 34.68em) {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  
+  & > *:not(:first-child) {
+    margin: 1rem 0 0;
+    
+    // 450px x 850px
+    @media only screen and (max-width: 28.13em) and (max-height: 53.13em) {
+      margin: 1.5rem 0 0;
+    }
+    
+    // 450px x 750px
+    @media only screen and (max-width: 28.13em) and (max-height: 46.88em) {
+      margin: 2rem 0 0;
+    }
+  }
+  
+  &__Toggle {
+    display: none;
+
+    // 450px x 850px
+    // 450px x 750px
+    // 650px x 950px
+    // 1280px x 550px
+    @media only screen and (max-width: 28.125em) and (max-height: 53.13em),
+    only screen and (max-width: 28.125em) and (max-height: 46.88em),
+    only screen and (max-width: 25em) and (max-height: 53.13em),
+    only screen and (max-width: 40.63em) and (max-height: 59.38em),
+    only screen and (max-width: 80em) and (max-height: 34.68em) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 3rem;
+      left: 3rem;
+      width: 6rem;
+      height: 6rem;
+      z-index: 1000;
+      border: 2px solid $blue3;
+      border-radius: 50%;
+      cursor: pointer;
+      
+      & > * {
+        width: 100%;
+        height: 100%;
+        margin-top: .5rem;
+        fill: $blue1;
+      }
+    }
+    
+    // 1280px x 550px
+    @media only screen and (max-width: 80em) and (max-height: 34.68em) {
+      left: -10%;
+    }
+
+    // 400px x 700px
+    @media only screen and (max-width: 25em) and (max-height: 43.75em) {
+      width: 5rem;
+      height: 5rem;
+      top: 2.25rem;
+    }
+
+    // 350px x 600px
+    @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
+      width: 4.5rem;
+      height: 4.5rem;
+      left: 2rem;
+    }
+
+    &_open {
+      border: 2px solid $orange3;
+
+      & > * {
+        fill: $red1;
+      }
+    }
+  }
+
+  // Skills category titles
+  &__Title {
+    display: block;
+    color: #fff;
+    font-size: $smaller-font-size;
+    font-weight: bold;
+    letter-spacing: $medium-letter-spacing;
+    margin-bottom: 1.2rem;
+    white-space: nowrap;
+    
+    // 1050px x 800px
+    @media only screen and (max-width: 65.63em) and (max-height: 50em) {
+      margin-bottom: 0;
+    }
+    
+    // 700px x 400px
+    @media only screen and (max-width: 43.75em) and (max-height: 25em) {
+      margin-bottom: -1rem;
+      font-size: 1.8rem;
+    }
+
+    // 450px x 750px
+    @media only screen and (max-width: 28.125em) and (max-height: 46.88em) {
+      margin-bottom: 0;
+    }
+      
+    // 400px x 850px
+    @media only screen and (max-width: 25em) and (max-height: 53.13em) {
+      margin-left: 1rem;
+      margin-bottom: 0rem;
+    }
+  }
+
+  // Wrappers for each category
+  &__Lang,
+  &__Lib,
+  &__Tech {    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // Contains all the icons
+  &__Skills {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+}
