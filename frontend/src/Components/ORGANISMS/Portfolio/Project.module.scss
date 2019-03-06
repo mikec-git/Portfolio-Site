@@ -193,7 +193,7 @@
     transform: translateZ(0);
 
     & > *:not(:last-child) {
-      margin-right: 4rem;
+      margin-right: 3.5rem;
       
       // 1280px x 550px
       @media only screen and (max-width: 80em) and (max-height: 34.68em) {
@@ -232,27 +232,27 @@
       
       // 450px x 850px
       @media only screen and (max-width: 28.13em) and (max-height: 53.13em) {
-        margin-right: 4.5rem;
+        margin-right: 2rem;
       } 
 
       // 450px x 750px
       @media only screen and (max-width: 28.13em) and (max-height: 46.88em) {
-        margin-right: 4.75rem;
+        margin-right: 1.8rem;
       } 
       
       // 400px x 850px
       @media only screen and (max-width: 25em) and (max-height: 53.13em) {
-        margin-right: 3rem;
+        margin-right: 1rem;
       }    
       
       // 375px x 700px
       @media only screen and (max-width: 23.44em) and (max-height: 43.75em) {
-        margin-right: .1rem;
+        margin-right: 2.25rem;
       }
             
       // 350px x 600px
       @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
-        margin-right: 0rem;
+        margin-right: 2rem;
       }
     }
   }

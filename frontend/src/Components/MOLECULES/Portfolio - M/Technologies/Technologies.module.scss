@@ -48,8 +48,7 @@
   
   // 450px x 900px
   @media only screen and (max-width: 28.13em) and (max-height: 56.25em) {
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
   }
   
   // 375px x 700px
@@ -77,15 +76,25 @@
 
   & > * {
     &:not(:nth-child(3n+3)) {
-      margin-right: 1.5rem;
+      margin-right: 1.3rem;
     }
-    margin-bottom: 2rem;
+
+    &:nth-child(3n+3) {
+      margin-right: 0;
+    }
+
+    margin-bottom: 1rem;
 
     // 1400px x 1100px
     @media only screen and (max-width: 87.5em) and (max-height: 68.75em) {
       &:not(:nth-child(3n+3)) {
         margin-right: 1.75rem;
       }
+
+      &:nth-child(3n+3) {
+        margin-right: 0;
+      }
+      
       margin-bottom: 2.5rem;
     }
     
@@ -94,6 +103,7 @@
       &:not(:nth-child(5n+5)) {
         margin-right: 1rem;
       }
+
       margin-bottom: 1.5rem;      
     }
     
@@ -102,6 +112,11 @@
       &:not(:nth-child(3n+3)) {
         margin-right: 1.75rem;
       }
+      
+      &:nth-child(3n+3) {
+        margin-right: 0;
+      }
+
       margin-bottom: 3rem;
     }
 
@@ -144,26 +159,28 @@
     
     // 450px x 900px
     @media only screen and (max-width: 28.13em) and (max-height: 56.25em) {
-      &:not(:nth-child(2n+2)) {
+      &:not(:nth-child(3n+3)) {
         margin-right: 1rem;
       }
-      margin-bottom: 1rem;
-    }
-    
-    // 450px x 850px
-    @media only screen and (max-width: 28.13em) and (max-height: 53.13em) {
-      &:not(:nth-child(2n+2)) {
-        margin-right: 2rem;
+      
+      &:nth-child(3n+3) {
+        margin-right: 0;
       }
+
       margin-bottom: 1rem;
     }
     
     // 450px x 750px
     @media only screen and (max-width: 28.13em) and (max-height: 46.88em) {
-      &:not(:nth-child(2n+2)) {
-        margin-right: 2.2rem;
+      &:not(:nth-child(3n+3)) {
+        margin-right: .95rem;
       }
-      margin-bottom: 1rem;      
+      
+      &:nth-child(3n+3) {
+        margin-right: 0;
+      }
+
+      margin-bottom: 1.3rem;      
     }
     
     // 375px x 700px
@@ -171,6 +188,11 @@
       &:not(:nth-child(3n+3)) {
         margin-right: .5rem;
       }
+
+      &:nth-child(3n+3) {
+        margin-right: 0;
+      }
+      
       margin-bottom: 1.45rem;
     }
     
@@ -179,12 +201,20 @@
       &:not(:nth-child(3n+3)) {
         margin-right: .3rem;
       }
+      
+      &:nth-child(3n+3) {
+        margin-right: 0;
+      }
     }
     
     // 350px x 600px
     @media only screen and (max-width: 21.88em) and (max-height: 37.5em) {
       &:not(:nth-child(3n+3)) {
         margin-right: .35rem;
+      }
+
+      &:nth-child(3n+3) {
+        margin-right: 0;
       }
     }
   }

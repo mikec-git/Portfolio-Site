@@ -29,6 +29,7 @@ class PageIndicator extends PureComponent {
 
   componentDidMount() {
     this.tl = new TimelineMax();
+    this.pageIndicatorEl = this.props.elementRef.current;
     this.handleProxy  = this.handleProxyRef.current;
     this.handleEl     = this.handleRef.current;
     this.barEl        = this.barRef.current.children;
@@ -62,7 +63,7 @@ class PageIndicator extends PureComponent {
         .set(this.handleProxy, {x: this.state.handlePosition}, 0)
         .set(this.handleEl, {x: this.state.handlePosition}, 0)
         .set([this.barEl, this.slashEl], {backgroundColor: this.props.currentSlide['descriptionColor']}, 0)
-        .set([this.pageNumberEl, this.handleEl, this.slashEl], {color: this.props.currentSlide['descriptionColor']}, 0);
+        .set([this.pageNumberEl, this.handleEl, this.slashEl, this.pageIndicatorEl], {color: this.props.currentSlide['descriptionColor']}, 0);
     });
 
     window.addEventListener('resize', this.pageResizeHandler);
@@ -88,7 +89,7 @@ class PageIndicator extends PureComponent {
           .to(this.handleEl, this.transitionDuration, {x: handlePosition, ease: Power2.easeInOut, overwrite: 'all'}, 0)
           .to(this.barEl, this.transitionDuration, {backgroundColor: barColor, ease: Power2.easeInOut}, 0.65)
           .to(this.slashEl, this.transitionDuration, {backgroundColor: barColor, ease: Power2.easeInOut}, 0)
-          .to([this.pageNumberEl, this.handleEl], this.transitionDuration, {color: barColor, ease: Power2.easeInOut}, 0)
+          .to([this.pageNumberEl, this.handleEl, this.pageIndicatorEl], this.transitionDuration, {color: barColor, ease: Power2.easeInOut}, 0)
           .call(() => this._animComplete = true);
 
         if(this._isMounted) {

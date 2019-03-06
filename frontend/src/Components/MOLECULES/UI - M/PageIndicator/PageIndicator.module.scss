@@ -12,6 +12,18 @@
     display: none;
   }
 
+  &::before {
+    content: 'Scroll to see more...';
+    display: block;
+    position: absolute;
+    top: 102%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    // color: white;
+    font-size: 1.2rem;
+    letter-spacing: $small-letter-spacing;
+  }
+
   // 450px x 900px
   @media only screen and (max-width: 28.13em) and (max-height: 56.25em) {
     display: none;
