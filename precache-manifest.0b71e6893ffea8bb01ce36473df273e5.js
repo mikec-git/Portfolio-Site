@@ -44,12 +44,12 @@ self.__precacheManifest = [
     "url": "/React-Portfolio-Site-Public/static/media/Code-Bold.f6a87fae.otf"
   },
   {
-    "revision": "5a2f705525eee7fca0673b0ee694528e",
-    "url": "/React-Portfolio-Site-Public/static/media/BLANCH_CONDENSED_INLINE.5a2f7055.otf"
-  },
-  {
     "revision": "546dd446b2ba09075ad34a25404e168a",
     "url": "/React-Portfolio-Site-Public/static/media/Mohave-Light.546dd446.otf"
+  },
+  {
+    "revision": "5a2f705525eee7fca0673b0ee694528e",
+    "url": "/React-Portfolio-Site-Public/static/media/BLANCH_CONDENSED_INLINE.5a2f7055.otf"
   },
   {
     "revision": "da45e4717d0fa06ad5d07694801f347c",
