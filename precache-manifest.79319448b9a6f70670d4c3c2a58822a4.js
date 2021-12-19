@@ -36,10 +36,6 @@ self.__precacheManifest = [
     "url": "/React-Portfolio-Site-Public/static/media/Alcubierre.1bb7d710.otf"
   },
   {
-    "revision": "ab53447b163dad1d6601d0fa84484d0d",
-    "url": "/React-Portfolio-Site-Public/static/media/BLANCH_CONDENSED.ab53447b.otf"
-  },
-  {
     "revision": "f6a87faebf080792930595084ea56812",
     "url": "/React-Portfolio-Site-Public/static/media/Code-Bold.f6a87fae.otf"
   },
@@ -50,6 +46,10 @@ self.__precacheManifest = [
   {
     "revision": "5a2f705525eee7fca0673b0ee694528e",
     "url": "/React-Portfolio-Site-Public/static/media/BLANCH_CONDENSED_INLINE.5a2f7055.otf"
+  },
+  {
+    "revision": "ab53447b163dad1d6601d0fa84484d0d",
+    "url": "/React-Portfolio-Site-Public/static/media/BLANCH_CONDENSED.ab53447b.otf"
   },
   {
     "revision": "da45e4717d0fa06ad5d07694801f347c",
